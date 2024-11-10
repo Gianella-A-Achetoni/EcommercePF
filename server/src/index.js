@@ -6,7 +6,6 @@ import bcrypt from 'bcrypt';
 import Zapatilla from './models/Zapatilla.js';
 import zapatillasRoutes from './routes/zapatillas.js';
 import { sequelize } from './database.js';
-import path from 'path'; // Importa el módulo path
 import User from './models/User.js';
 import nodemailer from 'nodemailer';
 import contactosRouter from './routes/contacto.js'; // Importa la ruta de contactos
@@ -25,10 +24,9 @@ const client = new MercadoPagoConfig({
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'client', 'HTML')));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'HTML', 'index.html'));
+    res.send("Soy el server :)");
 });
 
 app.get("/success", (req, res) => {
