@@ -9,6 +9,8 @@ import { sequelize } from './database.js';
 import User from './models/User.js';
 import nodemailer from 'nodemailer';
 import contactosRouter from './routes/contacto.js'; // Importa la ruta de contactos
+import dotenv from 'dotenv';
+dotenv.config();
 process.noDeprecation = true;
 import { MercadoPagoConfig, Preference } from "mercadopago";
 const app = express();
