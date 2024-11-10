@@ -10,8 +10,6 @@ import User from './models/User.js';
 import nodemailer from 'nodemailer';
 import contactosRouter from './routes/contacto.js'; // Importa la ruta de contactos
 process.noDeprecation = true;
-import express from "express";
-import cors from "cors";
 import { MercadoPagoConfig, Preference } from "mercadopago";
 const app = express();
 app.use(cors());
