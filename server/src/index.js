@@ -6,6 +6,7 @@ import bcrypt from 'bcrypt';
 import Zapatilla from './models/Zapatilla.js';
 import zapatillasRoutes from './routes/zapatillas.js';
 import { sequelize } from './database.js';
+import path from 'path'; // Importa el módulo path
 import User from './models/User.js';
 import nodemailer from 'nodemailer';
 import contactosRouter from './routes/contacto.js'; // Importa la ruta de contactos
