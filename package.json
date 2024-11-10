@@ -1,7 +1,7 @@
 {
     "name": "mi-proyecto",
     "version": "1.0.0",
-    "main": "src/index.js",
+    "main": "server/src/index.js",
     "type": "module",
     "scripts": {
         "start": "node server/src/index.js"

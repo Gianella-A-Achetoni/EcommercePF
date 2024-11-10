@@ -5,7 +5,7 @@ console.log('dotenv loaded:', !!'sql10743882');
 console.log('DB_USER:', 'sql10743882');
 console.log('DB_PASSWORD:', '2p7cIjFDgm');
 console.log('DB_NAME:', 'sql10743882');
-console.log('DB_HOST:', 'http://sql10.freesqldatabase.com/');
+console.log('DB_HOST:', 'sql10.freesqldatabase.com');
 console.log('DB_PORT:', 3306);
 
 const sequelize = new Sequelize(
