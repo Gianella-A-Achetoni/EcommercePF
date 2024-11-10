@@ -1,23 +1,17 @@
 import 'dotenv/config';
 import { Sequelize } from 'sequelize';
 
-console.log('dotenv loaded:', !!'sql10743882');
-console.log('DB_USER:', 'sql10743882');
-console.log('DB_PASSWORD:', '2p7cIjFDgm');
-console.log('DB_NAME:', 'sql10743882');
-console.log('DB_HOST:', 'sql10.freesqldatabase.com');
-console.log('DB_PORT:', 3306);
+console.log('dotenv loaded:', !!process.env.DB_USER);
+console.log('DB_USER:', process.env.DB_USER);
+console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
+console.log('DB_NAME:', process.env.DB_NAME);
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_PORT:', process.env.DB_PORT);
 
-const sequelize = new Sequelize(
-  'sql10743882',
-  'sql10743882',
-  '2p7cIjFDgm',
-  {
-    host: 'http://sql10.freesqldatabase.com/',
-    port: 3306,
-    dialect: 'mysql',
-  }
-);
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST,
+  dialect: 'mysql',
+});
 
 const connectDb = async () => {
   try {
