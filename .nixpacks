@@ -1,1 +1,5 @@
-entrypoint: node servidor/src/index.js
+# Define el lenguaje como Node.js
+language: "node"
+
+# Configura el archivo de inicio para la aplicación
+entrypoint: "node server/src/index.js"
