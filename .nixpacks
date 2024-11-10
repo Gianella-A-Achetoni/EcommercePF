@@ -1,0 +1,1 @@
+entrypoint: node servidor/src/index.js
