@@ -26,7 +26,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Soy el server :)");
+    res.sendFile(path.join(__dirname, 'client',"/client/HTML/index.js"))
 });
 
 app.get("/success", (req, res) => {
