@@ -21,6 +21,7 @@ const User = sequelize.define('user', {
   },
 }, {
   freezeTableName: true, // Evita que Sequelize pluralice el nombre de la tabla
+  timestamps: false, // Deshabilita los campos createdAt y updatedAt
 });
 
 export default User;

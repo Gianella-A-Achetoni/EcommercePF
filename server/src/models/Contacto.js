@@ -25,6 +25,7 @@ const Contacto = sequelize.define('Contacto', {
   },
 }, {
   tableName: 'contactos', // Nombre de la tabla
+  timestamps: false, // Deshabilita los campos createdAt y updatedA
 });
 
 // Sincronizar el modelo con la base de datos
