@@ -1,2 +1,11 @@
-language: "node"
-entrypoint: "npm start"
+{
+  "build": {
+    "use": "nodejs"
+  },
+  "install": {
+    "command": "npm install"
+  },
+  "start": {
+    "command": "npm run start"
+  }
+}
