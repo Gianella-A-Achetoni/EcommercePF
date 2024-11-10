@@ -1,0 +1,835 @@
+body, html {/*Estilos generales*/
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Passion One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}/*Fin estilos generales*/
+
+/*Estilos para lo que hace de navegador*/
+.nav {
+    background: #020202;
+    padding: 10px;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 1000; /* Asegura que el nav esté sobre otros elementos */
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+
+        li {
+            margin: 10px;     
+
+            a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+            }
+        }
+    }
+}/*Fin de estilos para el nav*/
+
+.nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF; /* Color de texto inicial */
+    transition: color 0.3s ease, box-shadow 0.3s ease; /* Añade una transición suave */
+}
+
+.nav ul li a:hover {
+    background: radial-gradient(circle, rgba(88, 0, 255, 1) 0%, rgba(233, 0, 255, 1) 100%);
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5); /* Aplica un resplandor o sombra alrededor del texto */
+    border-radius: 8px;
+}
+
+nav.nav {
+    background-color: #000000;
+}
+
+.slide-horizontal {
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(88, 0, 255, 1) 0%, rgba(233, 0, 255, 1) 100%);
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+    width: 100%;
+    padding: 20px 0;
+    white-space: nowrap;
+  }
+
+.slide-logos {
+    display: inline-block;
+    animation: 4s slide infinite linear;
+}
+.slide-logos img {
+    height: 50px;
+    margin: 0 40px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+.cart-btn {
+    color: #0095ff; /* Cambia el color del texto al pasar el mouse */
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5); /* Aplica un resplandor o sombra alrededor del texto */
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* estilo para el contador */
+#cart-counter {
+    position: relative;
+    top: -20px; 
+    right: 5px; 
+    background-color: white; /* Color de fondo */
+    color: rgba(0, 0, 0); /* Color del texto */
+    border-radius: 50%; /* Mantiene la forma circular */
+    padding: 3px 6px; /* Ajusta el padding para mayor tamaño */
+    font-size: 0.55em; /* Tamaño de fuente más grande */
+    min-width: 1px; /* Aumenta el ancho mínimo */
+    text-align: center; /* Centra el texto */
+    font-weight: bold; /* Para que el texto sea más destacado */
+    z-index: 1001; 
+}
+
+#cart-counter:hover {
+    color: white; 
+    transition: color 0.3s ease; /* Añade una transición suave */
+    background-color: black;
+}
+/* Estilos para pantalla central */
+.fullscreen-content {
+    background-image:url('https://i.pinimg.com/originals/db/6e/2f/db6e2f1f0479a0766de569273be9ba1e.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 100%;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+}
+
+/* Animación mejorada para el texto "RETRO" */
+.product-title {
+    opacity: 0; /* Empieza invisible */
+    transform: translateY(50px); /* Posición inicial fuera de la pantalla */
+    animation: fadeInSlideUp 2s ease forwards, bounce 0.5s 2s ease-out forwards;
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilos para el contenedor del producto */
+.product-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style de los productos creados desde Js */
+.card-products-container {
+    margin: 5vh auto;
+}
+
+.card-products {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centra los productos */
+    flex-wrap: wrap;
+    padding: 5px;
+}
+div.product {
+    background: rgba(39, 38, 38, 1);
+    border: solid 3px rgba(88, 0, 255, 1);
+    border-radius: 8px;
+    width: 300px; /* Ajusta al tamaño que desees */
+    height: 450px; /* Ajusta al tamaño que desees */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 10px; /* Espacio interno */
+    box-sizing: border-box;
+}
+.product {
+    border: 2px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background-color: rgba(11, 9, 9, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.3s ease; /* Tiempo de transición más largo para el giro */
+    perspective: 1000px; /* Agrega perspectiva para la rotación en 3D */
+    max-width: 300px; /* Limita el ancho máximo de cada producto */
+    flex-grow: 1; /* Permite que los productos se mantengan del mismo tamaño */
+    align-items: center;
+}
+.product::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 5px; /* Mismo radio de borde que el elemento principal */
+    z-index: -1; /* Envía el pseudo-elemento detrás del contenido */
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    background: radial-gradient(circle, rgba(88, 0, 255, 1) 0%, rgba(233, 0, 255, 1) 100%);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.product img {
+    /*width: 27vh;
+    height: 20vh;*/
+    width: 80%;
+    height: 80%; /* Ajusta la altura proporcionalmente */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    /*object-fit: contain;*/
+    max-height: 200px; /* Limita la altura máxima */
+    object-fit: contain; /* Asegura que la imagen se recorte para llenar el espacio */
+    transition: transform 0.6s ease; /* Sincronizado con la rotación del contenedor */
+    transform-style: preserve-3d; /* Asegura que las transformaciones en 3D se mantengan */
+    aspect-ratio: 1 / 1;
+}
+
+.product img[alt="Nike Cortez"] {
+    width: 200px; /* Ajusta el tamaño específico */
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 20px;
+}
+
+.product img[alt="Adidas Gazelle"] {
+    width: 180px; /* Ajusta el tamaño específico */
+    height: 200px;
+    object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
+    margin-top: 25px;
+}
+
+.product img[alt="Adidas La Trainer"] {
+    width: 180px; /* Ajusta el tamaño específico */
+    height: 200px;
+    object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
+    object-position: center; 
+    margin-top: 20px;
+}
+
+.product img[alt="Adidas Superstar"] {
+    width: 350px; /* Ajusta el tamaño específico */
+    height: 300px;
+    object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
+    object-position: center; 
+    margin-top: 20px;
+}
+
+.product img[alt="Adidas Superstar 1"] {
+    width: 150px; /* Ajusta el tamaño específico */
+    height: 150px;
+    object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
+    object-position: center; 
+    margin-top: 20px;
+}
+
+.product img[alt="Nike Dunk"] {
+    width: 300px; /* Ajusta el tamaño específico */
+    height: 300px;
+    object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
+    object-position: center; 
+    margin-top: 20px;
+}
+
+
+
+/* Ajuste para el giro deseado */
+.product:hover img {
+    animation: spinDiagonalLeft 0.6s forwards; /* Llama a la animación */
+}
+
+@keyframes spinDiagonalLeft {
+    0% {
+        transform: rotate(0deg); /* Comienza en posición normal */
+    }
+    50% {
+        transform: rotate(-15deg); /* Gira hacia -25 grados (izquierda) */
+    }
+    100% {
+        transform: rotate(-10deg); /* Termina en posición normal */
+    }
+}
+
+.buy-button {
+    outline: 0;
+    background-color: #000000;
+    width: 90%;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Passion One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.buy-button:hover {
+    background-color: #292020;
+    color: #0095ff; /* Cambia el color del texto al pasar el mouse */
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5); /* Aplica un resplandor o sombra alrededor del texto */
+}
+
+.buy-button:active {
+    background-color: rgba(233, 0, 255, 1);
+}
+
+.talles-container {
+    color: black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.talle-button {
+    background-color: #000000;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    
+}
+
+.talle-button:hover {
+    color: #0095ff; /* Cambia el color del texto al pasar el mouse */
+}
+
+.talle-button:active{
+    color: #0095ff; /* Cambia el color del texto al pasar el mouse */
+}
+
+
+/* Media queries para pantallas más pequeñas */
+/* En pantallas de hasta 1024px (tabletas), mostrar 2 productos por fila */
+@media screen and (max-width: 1024px) {
+    .product-container {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .product img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-products {
+        justify-content: space-around; /* Espaciado alrededor de los productos */
+    }
+    .product {
+        max-width: 39%; /* 2 productos por fila, ocupando 45% del ancho */
+        flex: 1 1 45%; /* Hacer que los productos sean flexibles */
+        margin: 10px; /* Espaciado uniforme */
+        padding: 5px;
+        aspect-ratio: 1.5; /* Mantener un aspecto rectangular */
+    }
+}
+
+/* En pantallas de hasta 768px (pequeñas tabletas y computadoras portátiles), ajustar el diseño */
+@media screen and (max-width: 768px) {
+    .product-container {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .product {
+        max-width: 40%; /* Asegura que se mantengan 2 productos por fila */
+        flex: 1 1 48%; /* Flexibilidad en el diseño */
+        margin: 10px; /* Espaciado uniforme */
+        aspect-ratio: 1.5; /* Mantener un aspecto rectangular */
+    }
+    .product img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* En pantallas de hasta 600px (móviles), mostrar 1 producto por fila */
+@media screen and (max-width: 600px) {
+    .product-container {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .product {
+        max-width: 70%; /* 1 producto por fila, ocupando el 90% del ancho */
+        margin: 10px 0; /* Espaciado vertical entre productos */
+        aspect-ratio: 1.5; /* Mantener un aspecto rectangular */
+    }
+    .product img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filters-and-search {/*Estilos para los filtros y buscar*/
+    padding: 10px;
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        margin: 0;
+        padding-top: 15px;
+        flex-wrap: wrap;
+    }
+}/*Fin de estilos para filtros y buscar*/
+
+/* Boton y input para buscar */
+.container {
+    padding: 15px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* Altura ajustada para mayor accesibilidad */
+}
+
+.input {
+    border: solid 2px rgba(88, 0, 255, 1);
+    max-width: 190px;
+    height: 57%; /* Asegura que el input y el botón tengan la misma altura */
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #000000;
+    caret-color: #f7f7f8; 
+    color: #fff;
+    padding: 7px 10px;
+    border: 2px solid transparent;
+    border-radius: 7px 0 0 7px; /* Usa shorthand para simplificación */
+    margin-right: 0; /* Elimina el margen derecho para alineación perfecta */
+    border-color: rgba(88, 0, 255, 1);
+    transition: background-color 0.2s ease; /* Optimiza las transiciones */
+}
+
+.input::before{
+    border: solid 2px rgba(88, 0, 255, 1);
+}
+
+.input:hover {
+    color: rgba(233, 0, 255, 1); /* Cambia el color del texto al pasar el mouse */
+    box-shadow: 0px 4px 8px rgba(88, 0, 255, 1) ;
+    border-color: rgba(88, 0, 255, 1); /* Simplificación */
+}
+
+.input:focus {
+    border-color: rgba(88, 0, 255, 1);
+    background-color: #080808;
+}
+
+.search__btn {
+    border: solid 2px rgba(88, 0, 255, 1);
+    cursor: pointer;
+    background-color: #000000;
+    border-radius: 0 7px 7px 0; /* Usa shorthand para simplificación */
+    height: 100%; /* Asegura que el botón tenga la misma altura que el input */
+    width: 40px; /* Ajusta el ancho del botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease; /* Transición suave */
+    margin-left: -2px; /* Ajusta el margen para compensar el borde del input */
+}
+
+.search__btn:hover {
+    background-color: #1d1d1d;
+    color: #0015ff; /* Cambia el color del texto al pasar el mouse */
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5); /* Aplica un resplandor o sombra alrededor del texto */
+}
+
+/* Responsividad móvil */
+@media (max-width: 600px) {
+    .input {
+        max-width: 100%; /* Ajusta el ancho para pantallas más pequeñas */
+    }
+
+    .search__btn {
+        width: 50px; /* Ancho mayor para facilidad en pantallas táctiles */
+    }
+}
+
+
+.footer {/*Estilos del footer*/
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: center;
+}/*Fin de estilos para el footer*/
+
+/* From Uiverse.io by gagan-gv */ /*Boton de filtros*/ 
+.btn {
+    width: 120px; /* Ancho reducido */
+    height: 40px; /* Altura reducida */
+    border-radius: 5px;
+    border: solid 2px rgba(88, 0, 255, 1);
+    transition: all 0.5s ease-in-out;
+    font-size: 14px; /* Tamaño de fuente reducido */
+    font-family: "Passion One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    background: #000000;
+    color: white;
+    position: relative; /* Asegura que el icono se posicione relativo al botón */
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px 0px rgba(88, 0, 255, 1);
+}
+
+.btn .icon {
+    position: absolute;
+    height: 30px; /* Altura del icono reducida */
+    width: 50px; /* Ancho del icono reducido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.btn .text {
+    transform: translateX(40px); /* Ajuste para el texto */
+}
+
+.btn:hover .icon {
+    width: 130px; /* Ancho del icono en hover reducido */
+}
+
+.btn:hover .text {
+    transition: all 0.5s;
+    opacity: 0; /* Asegúrate de que esto sea lo que deseas */
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active .icon {
+    transform: scale(0.85); /* Efecto al presionar el botón */
+}
+/*Fin de estilos para el boton de filtros*/
+
+/* Esto es para el responsive */
+
+@media (max-width: 768px) {
+    .nav ul li {
+        margin: 5px;
+    }
+
+    .product-container {
+        flex-direction: column;
+
+        .product-image {
+            max-width: 150px;
+            width: 40%;
+            margin: 10px 0;
+        }
+
+        .product-title {
+            font-size: 1.8em;
+        }
+    }
+
+    .filters-and-search ul li {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav ul li a {
+        padding: 8px 16px;
+    }
+
+    .product-container {
+        .product-image {
+            max-width: 100px;
+            width: 35%;
+        }
+
+        .product-title {
+            font-size: 1.5em;
+        }
+    }
+
+    .filters-and-search ul li a {
+        font-size: 0.9em;
+    }
+}
+
+/*Codiggo prueba*/
+/*        Modal, Estilos carrito, filtro     */
+.modal-overlay {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.modal-container {
+    display: none;
+    background: linear-gradient(to bottom, rgb(0, 0, 0, 0.7), rgba(0, 0, 0));
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90vw;
+    width: 80%;
+    z-index: 2;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 2px ridge rgba(255, 252, 252, 0.3);
+}
+
+.modal-container::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-close {
+    font-size: 1.25em;
+    float: right;
+    cursor: pointer;
+    color: white;
+}
+
+.modal-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1.25em;
+    text-align: center;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.modal-body {
+    font-style: normal;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* Coloca la imagen y el texto uno debajo del otro */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;
+}
+
+.modal-body ul {
+    margin: 0;
+    padding: 0;
+}
+
+.modal-footer {
+    font-style: normal;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Coloca la imagen y el texto uno debajo del otro */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;
+}
+
+.lista-de-filtros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    text-align: center;
+    padding: 0.8em;
+    color: white;
+}
+
+.lista-de-filtros select {
+    background-color: rgba(250, 36, 247, 0.478);
+    border: 2px ridge rgba(88, 0, 255, 1);
+    border-radius: 8px;
+    color: white;
+    padding: 0.5em;
+    text-align: justify;
+}
+
+#ordenarPor:hover {
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5);
+}
+
+#marca:hover {
+    color:white;
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5);
+}
+
+#total:hover {
+    color:white;
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5);
+}
+
+#talle:hover {
+    color:white;
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5);
+}
+
+#color:hover {
+    color:white;
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5);
+}
+
+.modal-apli {
+    outline: 0;
+    background-color: #000000;
+    max-width: 150px;
+    color: white;
+    border: none;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+.modal-apli:hover {
+    color: #0015ff; /* Cambia el color del texto al pasar el mouse */
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5);
+}
+
+.modal-reset {
+    margin-left: 10px;
+    outline: 0;
+    background-color: #000000;
+    max-width: 150px;
+    color: white;
+    border: none;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.modal-reset:hover {
+    color: #0015ff; /* Cambia el color del texto al pasar el mouse */
+    box-shadow: 0px 4px 8px rgba(0, 34, 255, 0.5);
+}
+
+div.modal-buttons {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 2em; /* Espacio entre los botones */
+    font-size: 1.5vw;
+    flex-wrap: wrap; 
+    padding: 1em;
+}
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .modal-apli, .modal-reset {
+        width: 45%;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-apli, .modal-reset {
+        width: 100%; 
+        font-size: 0.8em;
+    }
+    div.modal-buttons {
+        gap: 0.5em; 
+    }
+}
