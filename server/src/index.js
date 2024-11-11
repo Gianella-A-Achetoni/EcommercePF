@@ -26,8 +26,6 @@ app.use(cors());
 
 app.use(express.static(path.join(process.cwd(), 'client/HTML'))); // Sirve archivos estáticos desde el directorio HTML
 
-app.use(express.json("public"));
-
 
 const client = new MercadoPagoConfig({
     accessToken: "APP_USR-4972073114495345-103120-338493e48fae37002dac5c0d9b25562d-2068419215",
@@ -40,9 +38,9 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'client', "/client/HTML/index.js"));
 });
-app.get("/inicio", (req, res) =>{res.sendFile(path.join(__dirname,  'client', "/client/HTML/.js"));});
-app.get("/contacten", (req,res) =>{res.sendFile(path.join(__dirname,  'client', "/client/HTML/contacten.js"));});
-app.get("/login", (req,res) =>{res.sendFile(path.join(__dirname, 'client', "/client/HTML/login.js"))});
+app.get("/inicio", (req, res) =>{res.sendFile(path.join(__dirname,  'client','HTML', "inicio.js"));});
+app.get("/contacten", (req,res) =>{res.sendFile(path.join(__dirname,  'client','HTML', "contacten.js"));});
+app.get("/login", (req,res) =>{res.sendFile(path.join(__dirname, 'client', 'HTML',"login.js"))});
 
 app.get("/success", (req, res) => {
     const paymentId = req.query.payment_id; // Ejemplo de cómo capturar un parámetro
