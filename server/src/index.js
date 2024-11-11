@@ -9,18 +9,24 @@ import { sequelize } from './database.js';
 import User from './models/User.js';
 import nodemailer from 'nodemailer';
 import contactosRouter from './routes/contacto.js'; // Importa la ruta de contactos
-import path from 'path';
 import dotenv from 'dotenv';
 dotenv.config();
 process.noDeprecation = true;
 import { MercadoPagoConfig, Preference } from "mercadopago";
 import preloadUser from './preload/preloadUser.js';
 import preloadZapatillas from './preload/preloadZapatillas.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Obtén el directorio actual
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 app.use(cors());
 
-app.use(express.json());
-app.use(express.static('client')); /* para archivos estáticos para servir la carpeta client */
+app.use(express.static(path.join(process.cwd(), 'client/HTML'))); // Sirve archivos estáticos desde el directorio HTML
+app.use(express.static("client/HTML"))
+
 app.use(express.json("public"));
 
 
