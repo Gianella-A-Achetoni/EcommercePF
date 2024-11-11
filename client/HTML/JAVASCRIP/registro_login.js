@@ -142,7 +142,7 @@ async function registrarUsuario() {
     };
     console.log(nuevoUsuario);
     try {
-        const response = await fetch('http://localhost:8080/api/user', { // Asegúrate de que la URL sea correcta
+        const response = await fetch('/api/user', { // Asegúrate de que la URL sea correcta
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -171,7 +171,7 @@ async function consultaUsuario() {
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch(`http://localhost:8080/api/user/${username}`, { // Cambiado a GET y la ruta correcta
+        const response = await fetch(`/api/user/${username}`, { // Cambiado a GET y la ruta correcta
             method: 'GET', // Cambiado a GET
             headers: {
                 'Content-Type': 'application/json',
@@ -188,7 +188,7 @@ async function consultaUsuario() {
                 localStorage.setItem('isLoggedIn', 'true');
                 location.reload();
                 // Redirige al usuario a /client/HTML/index.html
-                window.location.href = '/client/HTML/index.html';
+                window.location.href = '/';
                 // Aquí puedes redirigir al usuario a otra página si es necesario
             } else {
                 alert("Contraseña incorrecta");
