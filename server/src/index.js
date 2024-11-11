@@ -13,6 +13,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 process.noDeprecation = true;
 import { MercadoPagoConfig, Preference } from "mercadopago";
+import preloadUser from './preload/preloadUser.js';
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -236,6 +237,7 @@ app.get('/api/zapatillas', async (req, res) => {
 });
 
 app.listen(4001, () => {
+  preloadUser();
   console.log('Servidor corriendo en http://localhost:4001');
 });
 
