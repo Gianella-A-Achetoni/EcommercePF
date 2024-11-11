@@ -16,25 +16,34 @@ process.noDeprecation = true;
 import { MercadoPagoConfig, Preference } from "mercadopago";
 import preloadUser from './preload/preloadUser.js';
 import preloadZapatillas from './preload/preloadZapatillas.js';
+
 const app = express();
 app.use(cors());
-
 app.use(express.json());
-app.use(express.static('client')); /* para archivos estáticos para servir la carpeta client */
-app.use(express.json("public"));
+/*app.use(express.static('client')); /* para archivos estáticos para servir la carpeta client */
+/*app.use(express.json("public"));*/
 
 
 const client = new MercadoPagoConfig({
     accessToken: "APP_USR-4972073114495345-103120-338493e48fae37002dac5c0d9b25562d-2068419215",
 });
 
-
-app.use(cors());
-app.use(express.json());
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'HTML', 'incio.html'));
+});
 
-  res.sendFile(__dirname + '/client/HTML/incio.html');
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'HTML', 'login.html'));
+});
+
+app.get("/contacten", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'HTML', 'contacten.html'));
+});
+
+app.get("/index", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'HTML', 'index.html'));
 });
 
 app.get("/success", (req, res) => {
