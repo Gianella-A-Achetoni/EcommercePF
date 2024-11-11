@@ -38,7 +38,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', "/client/HTML/inicio.js"));
+    res.sendFile(path.join(__dirname, 'client', "/client/HTML/inicioo.js"));
 });
 
 app.get("/success", (req, res) => {
@@ -245,6 +245,7 @@ app.get('/api/zapatillas', async (req, res) => {
     console.error("Error al obtener los productos:", error); // Imprime el error detallado
     res.status(500).json({ message: "Error al obtener los productos", error: error.message }); // Devuelve el mensaje de error
   }
+  res.sendFile(path.join(__dirname, 'client', "client/HTML/index.js"));
 });
 
 const PORT = process.env.PORT || 4001;
