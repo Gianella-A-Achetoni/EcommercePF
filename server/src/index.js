@@ -40,9 +40,9 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'client', "/client/HTML/index.js"));
 });
-app.get("/inicio", (req, res) =>{res.sendFile(path.join(__dirname, 'client', "/client/HTML/incioo.js"));});
-app.get("/contacten", (req,res) =>{res.sendFile(path.join(__dirname, 'client', "/client/HTML/contacten.js"));});
-app.get("/login", (req,res) =>{res.sendFile(path.join(__dirname, 'client', "/client/HTML/login.js"))});
+app.get("/inicio", (req, res) =>{res.sendFile(path.join(__dirname, 'client', "/HTML/incioo.js"));});
+app.get("/contacten", (req,res) =>{res.sendFile(path.join(__dirname, 'client', "/HTML/contacten.js"));});
+app.get("/login", (req,res) =>{res.sendFile(path.join(__dirname, 'client', "/HTML/login.js"))});
 
 app.get("/success", (req, res) => {
     const paymentId = req.query.payment_id; // Ejemplo de cómo capturar un parámetro
