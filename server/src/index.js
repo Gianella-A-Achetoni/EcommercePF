@@ -101,8 +101,8 @@ app.post("/create_preference", async (req, res) => {
 
 
 // Usa las rutas
-app.use('/api/contactos', contactosRouter); // Define la ruta base para contactos
-app.get('/api/contactos', async (req,res) =>{res.sendFile(path.join(__dirname, 'client', "clien/HTML/contacten.js"));});
+app.use('/api/contactos', contactosRouter,async (req,res) =>{res.sendFile(path.join(__dirname, 'client', "clien/HTML/contacten.js"));}); // Define la ruta base para contactos
+
 // Ruta para obtener la lista de usuarios
 app.get('/api/user', async (req, res) => {
   try {
