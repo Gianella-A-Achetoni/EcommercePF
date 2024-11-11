@@ -63,7 +63,7 @@ nav.nav {
 /*Estilos para la sección de login*/
 .login {
     background-color: #000000;
-    background-image: url('/client/Imagenes/Fondos/Fondoparalogincompu.jpg');
+    background-image: url('https://raw.githubusercontent.com/CodeStrong2023/Codigo33-12_E-commerce/refs/heads/main/client/Imagenes/Fondos/Fondoparalogincompu.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -177,7 +177,7 @@ nav.nav {
     }
 
     .login {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/client/Imagenes/Fondos/Fondoparalogin.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://raw.githubusercontent.com/CodeStrong2023/Codigo33-12_E-commerce/refs/heads/main/client/Imagenes/Fondos/Fondoparalogin.jpg');
         background-size: cover;
     }
 
@@ -207,7 +207,7 @@ nav.nav {
 /* Cambiar imagen de fondo si es una pantalla más pequeña */
 @media (max-width: 576px) {
     .login {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/client/Imagenes/Fondos/Fondoparalogin.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://raw.githubusercontent.com/CodeStrong2023/Codigo33-12_E-commerce/refs/heads/main/client/Imagenes/Fondos/Fondoparalogin.jpg');
         background-size: cover;
     }
 }
