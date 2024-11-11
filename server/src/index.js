@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.use(cors());
 
-app.use(express.static(path.join(process.cwd(), '../../client/HTML'))); // Sirve archivos estáticos desde el directorio HTML
+app.use(express.static(path.join(process.cwd(), 'client/HTML'))); // Sirve archivos estáticos desde el directorio HTML
 
 
 const client = new MercadoPagoConfig({
