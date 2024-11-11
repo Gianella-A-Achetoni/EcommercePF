@@ -819,11 +819,11 @@ const zapatillas =[
 	}
 ];
 
-const preloadZapatillas = async (zapatillas) => {
+const preloadZapatillas = async () => {
     try {
         await Promise.all(
             zapatillas.map((z) =>
-                Zapatilla.findOrCreate({
+                Zapatillas.findOrCreate({
                     where: { nombre: z.nombre }, // Usa el nombre como criterio de búsqueda
                     defaults: {
                         marca: z.marca,
