@@ -92,7 +92,7 @@ const displayFiltro = () => {
 
         // Hacer una nueva solicitud para obtener todos los productos sin filtros
         try {
-            const response = await fetch('http://localhost:4001/api/zapatillas');
+            const response = await fetch('http://localhost:8080/api/zapatillas');
             if (!response.ok) {
                 throw new Error("Error al obtener los productos");
             }

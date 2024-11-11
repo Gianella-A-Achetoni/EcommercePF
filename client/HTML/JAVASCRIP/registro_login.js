@@ -142,7 +142,7 @@ async function registrarUsuario() {
     };
     console.log(nuevoUsuario);
     try {
-        const response = await fetch('http://localhost:4001/api/user', { // Asegúrate de que la URL sea correcta
+        const response = await fetch('http://localhost:8080/api/user', { // Asegúrate de que la URL sea correcta
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -171,7 +171,7 @@ async function consultaUsuario() {
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch(`http://localhost:4001/api/user/${username}`, { // Cambiado a GET y la ruta correcta
+        const response = await fetch(`http://localhost:8080/api/user/${username}`, { // Cambiado a GET y la ruta correcta
             method: 'GET', // Cambiado a GET
             headers: {
                 'Content-Type': 'application/json',
@@ -211,7 +211,7 @@ async function restablecerContrasena() {
     };
 
     try {
-        const response = await fetch('http://localhost:4001/api/user/reset-password', {
+        const response = await fetch('http://localhost:8080/api/user/reset-password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
