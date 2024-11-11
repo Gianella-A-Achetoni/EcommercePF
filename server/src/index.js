@@ -23,9 +23,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 app.use(cors());
+
 app.use(express.static(path.join(process.cwd(), 'client/HTML'))); // Sirve archivos estáticos desde el directorio HTML
 app.use(express.static("client/HTML"))
+
 app.use(express.json("public"));
+
 
 const client = new MercadoPagoConfig({
     accessToken: "APP_USR-4972073114495345-103120-338493e48fae37002dac5c0d9b25562d-2068419215",
@@ -36,7 +39,8 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', "/client/HTML/index.js"));
+
+  res.sendFile(__dirname + '/client/HTML/incio.html');
 });
 
 app.get("/success", (req, res) => {
@@ -245,9 +249,11 @@ app.get('/api/zapatillas', async (req, res) => {
   }
 });
 
+const PORT = process.env.PORT || 4001;
+
 app.listen(4001, () => {
   preloadUser();
   preloadZapatillas();
-  console.log('Servidor corriendo en http://localhost:4001');
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
 
