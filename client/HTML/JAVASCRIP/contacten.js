@@ -7,7 +7,7 @@ document.getElementById('container-login').addEventListener('submit', async (e) 
     const telefono = document.getElementById('telefono').value;
     const mensaje = document.getElementById('mensaje').value;
 
-    const response = await fetch('http://localhost:4001/api/contactos', {
+    const response = await fetch('/api/contactos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

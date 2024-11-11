@@ -9,7 +9,6 @@ import { sequelize } from './database.js';
 import User from './models/User.js';
 import nodemailer from 'nodemailer';
 import contactosRouter from './routes/contacto.js'; // Importa la ruta de contactos
-import path from 'path';
 import dotenv from 'dotenv';
 dotenv.config();
 process.noDeprecation = true;
@@ -22,7 +21,6 @@ app.use(cors());
 app.use(express.json());
 /*app.use(express.static('client')); /* para archivos estáticos para servir la carpeta client */
 /*app.use(express.json("public"));*/
-
 
 const client = new MercadoPagoConfig({
     accessToken: "APP_USR-4972073114495345-103120-338493e48fae37002dac5c0d9b25562d-2068419215",
