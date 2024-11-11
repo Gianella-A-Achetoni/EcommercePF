@@ -24,16 +24,15 @@ const Zapatilla = sequelize.define('zapatilla', {
   },
   stock: {
     type: DataTypes.INTEGER,
-    allowNull: true, // Corrigido: debe ser `true` en lugar de `null`
+    allowNull: true, // Corrido: debe ser true en lugar de null
   },
   talle: {
     type: DataTypes.INTEGER,
-    allowNull: true, // Corrigido: debe ser `true` en lugar de `null`
+    allowNull: true, // Corrido: debe ser true en lugar de null
   },
-},{
-  tableName: 'contactos', // Nombre de la tabla
-  timestamps: false, // Deshabilita los campos createdAt y updatedA
+}, {
+  tableName: 'zapatillas', // Nombre de la tabla
+  timestamps: false, // Deshabilita los campos createdAt y updatedAt
 });
 
 export default Zapatilla;
-
