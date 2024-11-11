@@ -101,7 +101,7 @@ app.post("/create_preference", async (req, res) => {
 
 
 // Usa las rutas
-app.use('/api/contactos', contactosRouter,async (req,res) =>{res.sendFile(path.join(__dirname, 'client', "clien/HTML/contacten.js"));}); // Define la ruta base para contactos
+app.use('/api/contactos', contactosRouter,async (req,res) =>{res.sendFile(path.join(__dirname, "clien/HTML/contacten.js"));}); // Define la ruta base para contactos
 
 // Ruta para obtener la lista de usuarios
 app.get('/api/user', async (req, res) => {
@@ -245,7 +245,7 @@ app.get('/api/zapatillas', async (req, res) => {
     console.error("Error al obtener los productos:", error); // Imprime el error detallado
     res.status(500).json({ message: "Error al obtener los productos", error: error.message }); // Devuelve el mensaje de error
   }
-  res.sendFile(path.join(__dirname, 'client', "client/HTML/index.js"));
+  res.sendFile(path.join(__dirname, "client/HTML/index.js"));
 });
 
 const PORT = process.env.PORT || 4001;
