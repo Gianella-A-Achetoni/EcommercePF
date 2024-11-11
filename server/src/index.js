@@ -36,9 +36,9 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', "/client/HTML/index.html"));
+    res.sendFile(path.join(__dirname, 'client', "/client/HTML/incioo.html"));
 });
-app.get("/inicio", (req, res) =>{res.sendFile(path.join(__dirname,  '../../client/HTML/incioo.html'));});
+app.get("/tienda", (req, res) =>{res.sendFile(path.join(__dirname,  '../../client/HTML/index.html'));});
 app.get("/contacten", (req,res) =>{res.sendFile(path.join(__dirname,  '../../client/HTML/contacten.html'));});
 app.get("/login", (req,res) =>{res.sendFile(path.join(__dirname, '../../client/HTML/login.html'));});
 
