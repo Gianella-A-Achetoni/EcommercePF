@@ -1,4 +1,4 @@
-import Zapatillas from '../models/Zapatilla';
+import Zapatillas from '../models/Zapatilla.js';
 
 const zapatillas =[
 	{
