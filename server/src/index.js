@@ -18,7 +18,7 @@ import preloadUser from './preload/preloadUser.js';
 import preloadZapatillas from './preload/preloadZapatillas.js';
 const app = express();
 app.use(cors());
-app.use(express.static("client/"))
+app.use(express.static("client/HTML"))
 app.use(express.json("public"));
 
 const client = new MercadoPagoConfig({
