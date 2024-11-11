@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("buy-button").addEventListener("click", async () => {
             try {
-                const response = await fetch("http://localhost:4001/create_preference", {
+                const response = await fetch("http://localhost:8080/create_preference", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
