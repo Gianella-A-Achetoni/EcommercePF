@@ -39,8 +39,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-
-  res.sendFile(__dirname + '/client/HTML/incio.html');
+    res.sendFile(path.join(__dirname, 'client', "/client/HTML/inicio.js"));
 });
 
 app.get("/success", (req, res) => {
