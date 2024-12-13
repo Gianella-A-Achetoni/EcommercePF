@@ -236,7 +236,6 @@ div.product {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    /*object-fit: contain;*/
     max-height: 200px; /* Limita la altura máxima */
     object-fit: contain; /* Asegura que la imagen se recorte para llenar el espacio */
     transition: transform 0.6s ease; /* Sincronizado con la rotación del contenedor */
@@ -250,6 +249,8 @@ div.product {
     object-fit: cover;
     object-position: center;
     margin-top: 20px;
+    max-width: fit-content;
+    max-height: fit-content;
 }
 
 .product img[alt="Adidas Gazelle"] {
@@ -257,6 +258,8 @@ div.product {
     height: 200px;
     object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
     margin-top: 25px;
+    max-width: fit-content;
+    max-height: fit-content;
 }
 
 .product img[alt="Adidas La Trainer"] {
@@ -265,6 +268,8 @@ div.product {
     object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
     object-position: center; 
     margin-top: 20px;
+    max-width: fit-content;
+    max-height: fit-content;
 }
 
 .product img[alt="Adidas Superstar"] {
@@ -273,6 +278,8 @@ div.product {
     object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
     object-position: center; 
     margin-top: 20px;
+    max-width: fit-content;
+    max-height: fit-content;
 }
 
 .product img[alt="Adidas Superstar 1"] {
@@ -281,6 +288,8 @@ div.product {
     object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
     object-position: center; 
     margin-top: 20px;
+    max-width: fit-content;
+    max-height: fit-content;
 }
 
 .product img[alt="Nike Dunk"] {
@@ -289,6 +298,8 @@ div.product {
     object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor */
     object-position: center; 
     margin-top: 20px;
+    max-width: fit-content;
+    max-height: fit-content;
 }
 
 

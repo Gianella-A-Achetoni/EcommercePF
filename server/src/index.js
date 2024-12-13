@@ -15,29 +15,35 @@ process.noDeprecation = true;
 import { MercadoPagoConfig, Preference } from "mercadopago";
 import preloadUser from './preload/preloadUser.js';
 import preloadZapatillas from './preload/preloadZapatillas.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-// Obtén el directorio actual
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const app = express();
 app.use(cors());
-
-app.use(express.static(path.join(process.cwd(), 'client/HTML'))); // Sirve archivos estáticos desde el directorio HTML
-
+app.use(express.json());
+/*app.use(express.static('client')); /* para archivos estáticos para servir la carpeta client */
+/*app.use(express.json("public"));*/
 
 const client = new MercadoPagoConfig({
     accessToken: "APP_USR-4972073114495345-103120-338493e48fae37002dac5c0d9b25562d-2068419215",
 });
 
-
-app.use(cors());
-app.use(express.json());
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', "/client/HTML/index.html"));
+  res.sendFile(path.join(__dirname, 'client', 'HTML', 'incio.html'));
 });
+
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'HTML', 'login.html'));
+});
+
+app.get("/contacten", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'HTML', 'contacten.html'));
+});
+
+app.get("/index", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'HTML', 'index.html'));
+});
+
 app.get("/inicio", (req, res) =>{res.sendFile(path.join(__dirname,  '../../client/HTML/incioo.html'));});
 app.get("/contacten", (req,res) =>{res.sendFile(path.join(__dirname,  '../../client/HTML/contacten.html'));});
 app.get("/login", (req,res) =>{res.sendFile(path.join(__dirname, '../../client/HTML/login.html'));});
